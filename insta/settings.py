@@ -56,6 +56,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'insta.urls'
+LOGIN_REDIRECT_URL = '/'
 
 TEMPLATES = [
     {
