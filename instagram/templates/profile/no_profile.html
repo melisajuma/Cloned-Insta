@@ -1,0 +1,44 @@
+{%extends 'base.html'%}
+{% block content %} 
+{{ block.super}}
+
+
+
+<body>
+    <div style="margin-top:30px;background-color: white" class="container">
+    <div clas="row">
+        <h2 class="name">User hasn't set up the profile yet...</h2>
+        <div class="col-md-3 col-sm-2 col-lg-2"></div>
+        <div class="col-md-3 col-xs-6 col-sm-4 col-lg-3">
+        <img style="border-radius:100px;height:200px;width:200px;margin-top:20px" src="{{profile.profile_pic.url}}" class="img-responsive" alt="No profile pic">
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6 col-lg-5">
+          
+    <h3 class="name">{{user.username}}</h3>
+    <hr>
+    <p class="ff">followers <strong>0 </strong> following <strong>0</strong></p>
+      
+    <p class="bio">No bio</p>
+       
+  
+          
+    </div>
+    <div class="col-md-3 col-sm-3 col-lg-2"></div>
+    </div>
+    <hr>
+    </div>
+    <div style="background-color: white"class="container">
+    <hr>
+    <h4 class="text-center"><strong>Posts</strong></h4>
+    <hr>
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        No images
+        </div>
+       
+    </div>
+    <div class="col-md-2"></div>
+    </div>
+  
+</body>
+{% endblock %}

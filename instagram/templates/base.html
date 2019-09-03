@@ -1,0 +1,35 @@
+{% load bootstrap3 %}
+{% load static%}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+
+
+<title>Instagram {{title}}</title>
+<link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
+
+{% block styles %}
+
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link
+    href="https://fonts.googleapis.com/css?family=Aguafina+Script|Dancing+Script|Lobster|Niconne|Pacifico|Righteous|Satisfy&display=swap"
+    rel="stylesheet">
+{% endblock %}
+
+</head>
+
+<body>
+{% include "navbar.html" %}
+{% block content %} {%endblock%}
+
+{% block scripts %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% bootstrap_javascript %}
+{% endblock %}
+</body>
+
+</html>

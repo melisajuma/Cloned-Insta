@@ -1,0 +1,95 @@
+body{
+    background-color: rgb(247, 247, 247);
+}
+
+.items{
+    width:30px;
+    
+}
+.options{
+    padding:3px;
+    width:100px;
+    height:50px;
+}
+form{
+    border:1px solid rgb(228, 224, 224);
+    padding:10px;
+    border-radius:3px;
+    background-color: white;
+}
+.card{
+    border:1px solid rgb(211, 208, 208);
+    padding:10px;
+    border-radius:2px;
+    background-color: white;
+}
+.post{
+    border-radius:100px;
+    margin:2px;
+    height:40px;
+    width:40px;
+}
+.post-search{
+    border-radius:100px;
+    margin:2px;
+    height:50px;
+    width:50px;
+}
+.post2{
+    border-radius:100px;
+    height:40px;
+    width:40px;
+}
+.menu{
+    float:right;
+    font-size:30px;
+    text-decoration:none;
+
+}
+.foot{
+    font-size:30px;
+    color:rgb(218, 214, 214);
+}
+.ig{
+    font-family: 'Lobster', cursive;
+    color:black;
+}
+
+.name{
+    font-family: 'Pacifico', cursive;  
+}
+.ff{
+    font-family: 'Aguafina Script', cursive;
+    font-size:26px
+}
+.bio{
+    font-family: 'Niconne', cursive; 
+    font-size:25px
+}
+.glyphicon-plus{
+    background-color: white;
+}
+.com{
+    font-family: 'Pacifico', cursive;  
+}
+.ment{
+    font-family: 'Aguafina Script', cursive;
+    font-size:20px
+}
+.form-search{
+    border:0px;
+}
+@media screen and (min-width: 992px) {
+    .profile{
+        position:fixed;
+        background-color: white;
+        padding: 10px;
+        width:100%;
+        margin-bottom:20px
+    
+    }
+   
+}
+#h3{
+    font-family: 'Pacifico', cursive;
+}

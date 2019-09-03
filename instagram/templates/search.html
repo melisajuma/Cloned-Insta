@@ -1,0 +1,24 @@
+{%extends 'base.html'%} 
+{% block content %}
+{{ block.super}}
+
+<div style="margin-top:50px"class="container">
+    <div class="col-md-2"></div>
+    <div style="background-color: white;padding:20px"class="col-md-8">
+        {% if users %}
+        <h3>Found  users matching the name</h3>
+        {% for user in users %}
+        <a style="text-decoration:none;color:black" href="{% url 'profile' user.id  %}">
+        <p><img class="post-search"  src="{{user.profile.profile_pic.url}}" class="img-responsive" alt="Image">
+        <strong>{{user.username}}</strong></p>
+        </a>
+        <hr>
+        {% endfor %}
+        
+        {% else %}
+    <p> Did not find usernames matching the name </p>
+        {% endif %}
+    </div>   
+    <div class="col-md-2"></div>
+</div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{%extends 'base.html'%}
+{% block content %} 
+{{ block.super}}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>New Comment</title>
+{{form.media}}
+{% load bootstrap3 %} {% load staticfiles %}
+{% block styles %} {% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}"> 
+<link href="https://fonts.googleapis.com/css?family=Aguafina+Script|Dancing+Script|Lobster|Niconne|Pacifico|Righteous|Satisfy&display=swap" rel="stylesheet">
+{% endblock %}
+
+</head>
+
+<body>
+<div class="container" style="margin-top:50px;margin-bottom:50px;">
+    <div class="row">
+        <div class="col-md-2 col-sm-1 "></div>
+    <div class="col-md-8 col-sm-10 col-xs-12">
+        <div class="card">
+                
+        <p><img class="post" src="{{image.profile.profile_pic.url}}"><strong>{{image.owner}}</strong></p><br>
+                                
+        <img class="img-responsive" src="{{image.image.url}}"><br>
+        {% if likes %}
+        <p><b>{{likes}}</b> likes</p>
+        {% else %}
+        <p>No likes</p>
+        {%endif%}
+        {% if like %}
+        <p>You liked the image</p>
+        {% else %}
+        <a href="like/{{image.id}}"><span class='glyphicon glyphicon-thumbs-up'style="font-size:25px"></span></a>
+        {% endif %}
+        <form style="border:white"action="/comment/{{image.id}}" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+      
+        {% bootstrap_form form%}
+        <input type="submit" class="btn btn-primary btn-sm" value="Post">
+        </form>
+        </div>
+    <h2 class="text-center com">comments</h2><br>
+    {% for comment in comments %}
+    <img class="post2" src="{{comment.user.profile.profile_pic.url}}"><strong>{{comment.user.username}}</strong></p><br>
+    <p class="bi">{{comment.comment}}</p>
+    <hr>
+    {% endfor %}
+        
+
+</div>
+
+{% block scripts %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% bootstrap_javascript %} {% endblock %}
+  
+<div class="col-md-2 col-sm-1"></div>
+</div>
+
+</div>
+<br><br><br>
+</body>
+{% endblock %}
+</html>

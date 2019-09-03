@@ -1,0 +1,74 @@
+{%extends "registration/base.html"%}
+{% load bootstrap3 %}
+{% block content %}
+<div class="zote">
+<div class="container">
+    <div class="row">
+    <!-- Empty div -->
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        {% if form.errors %}
+        <p> Some Information Might be Incorrect </p>
+        {% endif %}
+        <div style="margin-top:30px;margin-bottom:50px;" class="panel panel-default">
+
+        <div class="panel-heading">
+            <h3 class="text-center">Instagram</h3>
+            <h4 class="text-center"> Sign up</h4>
+        </div>
+        <div class="panel-body">
+
+            <form action="/accounts/register/" method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary btn-sm" value="Sign Up">
+            </div>
+
+            <input type="hidden" name="next" value="{{next}}">
+
+            </form>
+
+        </div>
+        <p>Have an account. <a href="/accounts/login">Login</a></p>
+        </div>
+
+    </div>
+    <!-- empty div -->
+    <div class="col-md-3"></div>
+    </div>
+</div>
+</div>
+
+
+
+<style>
+.zote {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: auto;
+    height: 100%;
+    animation: fade 15s infinite;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes fade {
+    0% {
+    background-image: url('https://mdbootstrap.com/img/Photos/Others/images/77.jpg');
+    }
+
+    50% {
+    background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+    }
+
+    100% {
+    background-image: url('https://mdbootstrap.com/img/Photos/Others/images/79.jpg');
+    }
+}
+</style>
+{% endblock %}

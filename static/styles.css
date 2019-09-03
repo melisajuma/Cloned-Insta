@@ -1,0 +1,15 @@
+.items {
+    width: 500px;
+    height: 700px;
+}
+
+.options {
+    padding: 3px;
+}
+
+form {
+    border: 1px solid rgb(228, 224, 224);
+    padding:10px;
+    border-radius: 3px;
+    
+}

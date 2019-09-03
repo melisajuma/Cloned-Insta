@@ -28,7 +28,6 @@ try:
     import builtins
 except ImportError:
     import __builtin__
-
     builtins = __builtin__
 
 
@@ -47,7 +46,7 @@ def open(filename):
 
     def imopen(fp):
         # read header fields
-        header = fp.read(32 + 24 + 32 + 12)
+        header = fp.read(32+24+32+12)
         size = i32(header, 32), i32(header, 36)
         offset = i32(header, 40)
 
@@ -63,7 +62,7 @@ def open(filename):
 
         # strings are null-terminated
         im.info["name"] = header[:32].split(b"\0", 1)[0]
-        next_name = header[56 : 56 + 32].split(b"\0", 1)[0]
+        next_name = header[56:56+32].split(b"\0", 1)[0]
         if next_name:
             im.info["next_name"] = next_name
 

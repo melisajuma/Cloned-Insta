@@ -1,0 +1,63 @@
+{%extends 'base.html'%}
+{% block content %}
+{{ block.super}}
+
+
+
+<body>
+{% include "navbar.html" %}
+<div style="margin-top:30px;background-color: white" class="container">
+    <div clas="row">
+    <div class="col-md-3 col-sm-2 col-lg-2"></div>
+    <div class="col-md-3 col-xs-6 col-sm-4 col-lg-3">
+        <img style="border-radius:100px;height:200px;width:200px;" src="{{profile.profile_pic.url}}"
+        class="img-responsive" alt="Image">
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-6 col-lg-5">
+
+        <h3 class="name">{{user.username}}</h3>
+        <hr>
+        <p class="ff">followers <strong>0 </strong> following <strong>0</strong></p>
+
+        <p class="bio">{{profile.bio }}</p>
+
+
+        {% if request.user == user %}
+        <p class="btn btn-default"> <a style="text-decoration:none;color:black"
+            href="{% url 'update_profile' user.id %}">Edit profile</a></p>
+        {% else %}
+        <p class="btn btn-primary btn-xs"> <a style="text-decoration:none;color:white" href="#"> Follow </a></p>
+
+        {% endif %}
+
+    </div>
+    <div class="col-md-3 col-sm-3 col-lg-2"></div>
+    </div>
+    <hr>
+</div>
+<div style="background-color: white" class="container">
+    <hr>
+    <h4 class="text-center"><strong>Posts</strong></h4>
+    <hr>
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+    {% for image in images %}
+    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 ">
+        <img style="margin:13px;height:200px;width:200px;" src="{{image.image.url}}" class="img-responsive" alt="Image">
+        {% if request.user == user %}
+        <!-- <p class="btn btn-default"> <a style="text-decoration:none;color:black" href="{% url 'update_image' image.id %}">Edit post</a></p> -->
+        {% endif %}
+    </div>
+    {% endfor %}
+    {% if request.user == user %}
+    <a href="{% url 'new_image' user.id %}">
+        <span style="margin:13px;font-size: 50px;border:1px solid rgb(230, 226, 226);padding:75px ;color:black"
+        class="glyphicon glyphicon-plus"></span>
+    </a>
+    {% endif %}
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+</body>
+{% endblock %}

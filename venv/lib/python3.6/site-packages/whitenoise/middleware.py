@@ -7,10 +7,7 @@ from django.conf import settings
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.contrib.staticfiles import finders
 from django.http import FileResponse
-try:
-    from urllib.parse import urlparse  # PY3
-except ImportError:
-    from urlparse import urlparse  # PY2
+from django.utils.six.moves.urllib.parse import urlparse
 
 from .base import WhiteNoise
 from .string_utils import decode_if_byte_string, ensure_leading_trailing_slash
