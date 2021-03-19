@@ -13,7 +13,7 @@ django-stringfield==0.3.0
 django-tinymce==2.8.0
 gunicorn==19.9.0
 idna==2.7
-Pillow==6.0.0
+Pillow==8.1.1
 psycopg2==2.8.2
 python-dateutil==2.7.3
 python-decouple==3.1
